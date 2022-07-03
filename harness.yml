@@ -1,0 +1,57 @@
+templates:
+  - &gep_48
+    type: GEP Box 48 Pins
+    subtype: Power Box
+    pincount: 48
+    hide_disconnected_pins: true
+  - &gep_72
+    type: GEP Box 72 Pins
+    subtype: Power Box
+    pincount: 72
+    hide_disconnected_pins: true
+  - &dtm_f
+    type: DTM
+    subtype: female
+  - &dtm_m
+    type: DTM
+    subtype: male
+  - &dtp_f
+    type: DTP
+    subtype: female
+  - &dtp_m
+    type: DTP
+    subtype: male
+  - &dt_f
+    type: DT
+    subtype: female
+  - &dt_m
+    type: DT
+    subtype: female
+
+connectors:
+  Body_PDM_1:
+    <<: *gep_48
+  Body_PDM_2:
+    <<: *gep_48
+  Engine_PDM:
+    <<: *gep_72
+  RCP_IO:
+    type: Race Capture I/O Array
+    image: img/RaceCapturePro_MK3_Molex.png
+    pincount: 24
+    pinlabels: [12V, GPIO1, GPIO2, GPIO3, REF_5V, AN5, AN6, AN7, AN8, AUX_TX,
+      CAN1_H, CAN2_H, CAN2_L, CAN1_L, AUX_RX, An4, AN3, AN2, AN1, FREQ4, FREQ3,
+      FREQ2, FREQ1, GND]
+  RCP_RJ45:
+    type: Race Capture CAN Bus
+    image: img/RaceCapturePro_MK3_RJ45.png
+    pincount: 8
+    pinlabels: [GND, CAN1_H, CAN1_L, CAN2_H, CAN2_L, N/C, N/C, 12V]
+  
+
+cables:
+
+
+connections:
+
+
