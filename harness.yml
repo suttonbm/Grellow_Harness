@@ -47,7 +47,52 @@ connectors:
     image: img/RaceCapturePro_MK3_RJ45.png
     pincount: 8
     pinlabels: [GND, CAN1_H, CAN1_L, CAN2_H, CAN2_L, N/C, N/C, 12V]
-  
+  X1:
+    <<: *dtp_f
+    notes: Wipers
+    pincount: 2
+  X2:
+    <<: *dtp_f
+    notes: Blower
+    pincount: 2
+  X3:
+    type: TBD
+    subtype: TBD
+    notes: Coolsuit
+  X4:
+    <<: *dt_f
+    notes: Driver Air
+    pincount: 2
+  X5:
+    type: TBD
+    subtype: TBD
+    notes: Radio
+  X6:
+    <<: dtm_f
+    notes: USB Hub
+    pincount: 2
+  X7:
+    type: TBD
+    subtype: TBD
+    notes: Accessory Lighting (?)
+  X8:
+    <<: dt_f
+    notes: Fuel Pump
+    pincount: 2
+  X9:
+    <<: dt_f
+    notes: Diff Cooler
+    pincount: 2
+  X10:
+    <<: dtm_f
+    notes: Dash / HUD / rPi
+    pincount: 2
+  X11:
+    type: USB
+    subtype: Micro
+    notes: Dash / HUD / rPi
+  X12:
+    <<
 
 cables:
 
