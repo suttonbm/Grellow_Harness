@@ -47,30 +47,40 @@ connectors:
     image: img/RaceCapturePro_MK3_RJ45.png
     pincount: 8
     pinlabels: [GND, CAN1_H, CAN1_L, CAN2_H, CAN2_L, N/C, N/C, 12V]
+  PDM_Keypad:
+    <<: dt_m
+    pincount: 4
+    pinlabels: [CAN_L, CAN_H, GND, VBAT]
   X1:
     <<: *dtp_f
     notes: Wipers
     pincount: 2
+    pinlabels: [12V, GND]
   X2:
     <<: *dtp_f
     notes: Blower
     pincount: 2
+    pinlabels: [12V, GND]
   X3:
     type: TBD
     subtype: TBD
     notes: Coolsuit
+    pinlabels: [12V, GND]
   X4:
     <<: *dt_f
     notes: Driver Air
     pincount: 2
+    pinlabels: [12V, GND]
   X5:
     type: TBD
     subtype: TBD
     notes: Radio
+    pinlabels: [12V, GND]
   X6:
     <<: dtm_f
     notes: USB Hub
     pincount: 2
+    pinlabels: [12V, GND]
   X7:
     type: TBD
     subtype: TBD
@@ -79,20 +89,98 @@ connectors:
     <<: dt_f
     notes: Fuel Pump
     pincount: 2
+    pinlabels: [12V, GND]
   X9:
     <<: dt_f
     notes: Diff Cooler
     pincount: 2
+    pinlabels: [12V, GND]
   X10:
     <<: dtm_f
     notes: Dash / HUD / rPi
     pincount: 2
+    pinlabels: [12V, GND]
   X11:
     type: USB
     subtype: Micro
     notes: Dash / HUD / rPi
   X12:
-    <<
+    type: switch
+    subtype: 2-way
+    notes: Ignition Switch
+    pincount: 2
+  X13a:
+    type: TBD
+    subtype: TBD
+    notes: Passenger Headlight
+    pincount: 2
+    pinlabels: [12V, GND]
+  X13b:
+    type: TBD
+    subtype: TBD
+    notes: Driver Headlight
+    pincount: 2
+    pinlabels: [12V, GND]
+  X14a:
+    type: TBD
+    subtype: TBD
+    notes: Passenger Fog Light
+    pincount: 2
+    pinlabels: [12V, GND]
+  X14b:
+    type: TBD
+    subtype: TBD
+    notes: Driver Fog Light
+    pincount: 2
+    pinlabels: [12V, GND]
+  X15:
+    <<: dt_f
+    notes: Trans Oil Pump
+    pincount: 2
+    pinlabels: [12V, GND]
+  X16:
+    <<: dtp_f
+    notes: Engine Fan
+    pincount: 2
+    pinlabels: [12V, GND]
+  X17a:
+    <<: dt_f
+    notes: Passenger Horn
+    pincount: 2
+    pinlabels: [12V, GND]
+  X17b:
+    <<: dt_f
+    notes: Driver Horn
+    pincount: 2
+    pinlabels: [12V, GND]
+  X18a:
+    type: TBD
+    subtype: TBD
+    notes: Passenger Brake Light
+    pincount: 2
+    pinlabels: [12V, GND]
+  X18b:
+    type: TBD
+    subtype: TBD
+    note: Driver Brake Light
+    pincount: 2
+    pinlabels: [12V, GND]
+  X18c:
+    type: TBD
+    subtype: TBD
+    note: Center Brake Light
+    pincount: 2
+    pinlabels: [12V, GND]
+  GND:
+    type: Terminal
+    subtype: Ring
+    pinlabels: [GND]
+    autogenerate: true
+  VBAT:
+    type: Terminal
+    subtype: Ring
+    pinlabels: [12V]
+    autogenerate: true
 
 cables:
 
