@@ -292,13 +292,28 @@ connectors:
     autogenerate: true
   
 cables:
-  Body_PDM_Harness:
-    category: bundle
-    wirecount: 45
+  PDM_Bundle:
+    wirecount: 7
+    wirelabels: [PDM_1, PDM_2, PDM_3, PDM_4, PDM_5, PDM_6, PDM_7]
   
-  Engine_PDM_Harness:
-    category: bundle
-    wirecount: 36
+  PDM_EXP_Bundle:
+    wirecount: 7
+    wirelabels: [PDM_EXP_!, PDM_EXP_2, PDM_EXP_3, PDM_EXP_4, PDM_EXP_5, PDM_EXP_6, PDM_EXP_7]
+  
+  Body_PDM_GND:
+    wirecount: 5
+  
+  Body_PDM_VBAT:
+    wirecount: 4
+  
+  Engine_PDM_GND:
+    wirecount: 6
+  
+  Engine_PDM_VBAT:
+    wirecount: 3
+  
+  Unload_Wire:
+    wirecount: 1
   
   CAN1:
     wirecount: 2
@@ -309,15 +324,139 @@ cables:
     wirelabels: [LO, HI]
 
 connections:
-  # PDM Control
+  # PDM Control Circuits
   -
+    - Body_PDM_1: 3
+    - PDM_Bundle: 7
+    - Body_PDM_2: 3
+  -
+    - Body_PDM_1: 4
+    - PDM_Bundle: 3
+    - Engine_PDM: 29
+  -
+    - Body_PDM_1: 5
+    - PDM_Bundle: 6
+    - Body_PDM_2: 1
+  -
+    - Body_PDM_1: 7
+    - PDM_Bundle: 5
+    - Engine_PDM: 3
+  -
+    - Body_PDM_1: 8
+    - PDM_Bundle: 2
+    - Engine_PDM: 1
+  -
+    - Body_PDM_1: 11
+    - PDM_Bundle: 4
+    - Engine_PDM: 56
+  -
+    - Body_PDM_1: 12
+    - PDM_Bundle: 1
+    - Engine_PDM: 25
+  
+  # PDM Expansion Control Circuits
+  -
+    - Body_PDM_1: 21
+    - PDM_EXP_Bundle: 1
+    - Engine_PDM: 63
+  -
+    - Body_PDM_1: 22
+    - PDM_EXP_Bundle: 4
+    - Body_PDM_2: 23
+  -
+    - Body_PDM_1: 26
+    - PDM_EXP_Bundle: 5
+    - Body_PDM_2: 41
+  - 
+    - Body_PDM_1: 28
+    - PDM_EXP_Bundle: 6
+    - Body_PDM_2: 43
 
-  # Body Circuits
+  # Body PDM Power/Gnd
   -
     - Body_PDM_1: 1
-    - Body_PDM_Harness: 1
+    - Body_PDM_GND: 1
     - _GND
+  -
+    - Body_PDM_1: 32
+    - Body_PDM_GND: 2
+    - _GND
+  -
+    - Body_PDM_2: 14
+    - Body_PDM_GND: 3
+    - _GND
+  -
+    - Body_PDM_2: 30
+    - Body_PDM_GND: 4
+    - _GND
+  -
+    - Body_PDM_2: 46
+    - Body_PDM_GND: 5
+    - _GND
+  -
+    - Body_PDM_2: 17
+    - Body_PDM_VBAT: 3
+    - _VBAT
+  -
+    - Body_PDM_2: 33
+    - Body_PDM_VBAT: 4
+    - _VBAT
+  -
+    - Body_PDM_1: 17
+    - Body_PDM_VBAT: 1
+    - _VBAT
+  -
+    - Body_PDM_1: 33
+    - Body_PDM_VBAT: 2
+    - _VBAT
+  
+  # Engine PDM Power/Gnd
+  -
+    - Engine_PDM: 10
+    - Engine_PDM_GND: 1
+    - _GND
+  -
+    - Engine_PDM: 12
+    - Engine_PDM_GND: 2
+    - _GND
+  -
+    - Engine_PDM: 42
+    - Engine_PDM_GND: 3
+    - _GND
+  -
+    - Engine_PDM: 46
+    - Engine_PDM_GND: 4
+    - _GND
+  -
+    - Engine_PDM: 48
+    - Engine_PDM_GND: 5
+    - _GND
+  -
+    - Engine_PDM: 72
+    - Engine_PDM_GND: 6
+    - _GND
+  -
+    - Engine_PDM: 19
+    - Engine_PDM_VBAT: 1
+    - _VBAT
+  -
+    - Engine_PDM: 57
+    - Engine_PDM_VBAT: 2
+    - _VBAT
+  -
+    - Engine_PDM: 67
+    - Engine_PDM_VBAT: 3
+    - _VBAT
 
-  # Engine Circuits
-  - 
+  # Unload Circuit
+  -
+    - Engine_PDM: 8
+    - Unload_Wire
+    - Engine_PDM: 43
+    - Unload_Wire
+    - Engine_PDM: 70
+    - Unload_Wire
+    - Body_PDM_2: 29
+    - Unload_Wire
+    - Body_PDM_1: 46
 
