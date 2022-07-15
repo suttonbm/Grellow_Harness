@@ -1,0 +1,90 @@
+
+cables:
+  Body_PDM_GND:
+    wirecount: 5
+  
+  Body_PDM_VBAT:
+    wirecount: 4
+  
+  Engine_PDM_GND:
+    wirecount: 6
+  
+  Engine_PDM_VBAT:
+    wirecount: 3
+
+connections:
+  # Body PDM Power/Gnd
+  -
+    - Body_PDM_1: 1
+    - Body_PDM_GND: 1
+    - _GND
+  -
+    - Body_PDM_1: 32
+    - Body_PDM_GND: 2
+    - _GND
+  -
+    - Body_PDM_2: 14
+    - Body_PDM_GND: 3
+    - _GND
+  -
+    - Body_PDM_2: 30
+    - Body_PDM_GND: 4
+    - _GND
+  -
+    - Body_PDM_2: 46
+    - Body_PDM_GND: 5
+    - _GND
+  -
+    - Body_PDM_2: 17
+    - Body_PDM_VBAT: 3
+    - _VBAT
+  -
+    - Body_PDM_2: 33
+    - Body_PDM_VBAT: 4
+    - _VBAT
+  -
+    - Body_PDM_1: 17
+    - Body_PDM_VBAT: 1
+    - _VBAT
+  -
+    - Body_PDM_1: 33
+    - Body_PDM_VBAT: 2
+    - _VBAT
+  
+  # Engine PDM Power/Gnd
+  -
+    - Engine_PDM: 10
+    - Engine_PDM_GND: 1
+    - _GND
+  -
+    - Engine_PDM: 12
+    - Engine_PDM_GND: 2
+    - _GND
+  -
+    - Engine_PDM: 42
+    - Engine_PDM_GND: 3
+    - _GND
+  -
+    - Engine_PDM: 46
+    - Engine_PDM_GND: 4
+    - _GND
+  -
+    - Engine_PDM: 48
+    - Engine_PDM_GND: 5
+    - _GND
+  -
+    - Engine_PDM: 72
+    - Engine_PDM_GND: 6
+    - _GND
+  -
+    - Engine_PDM: 19
+    - Engine_PDM_VBAT: 1
+    - _VBAT
+  -
+    - Engine_PDM: 57
+    - Engine_PDM_VBAT: 2
+    - _VBAT
+  -
+    - Engine_PDM: 67
+    - Engine_PDM_VBAT: 3
+    - _VBAT

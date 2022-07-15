@@ -1,0 +1,296 @@
+templates:
+  - &gep_48
+    type: GEP Box 48 Pins
+    subtype: Power Box
+    pincount: 48
+  - &gep_72
+    type: GEP Box 72 Pins
+    subtype: Power Box
+    pincount: 72
+  - &dtm_f
+    type: DTM
+    subtype: female
+  - &dtm_m
+    type: DTM
+    subtype: male
+  - &dtp_f
+    type: DTP
+    subtype: female
+  - &dtp_m
+    type: DTP
+    subtype: male
+  - &dt_f
+    type: DT
+    subtype: female
+  - &dt_m
+    type: DT
+    subtype: female
+
+connectors:
+  Body_PDM_1:
+    <<: *gep_48
+    pinlabels: [GND, PDM_CAN_L, PDM_7, PDM_1, PDM_6, PDM_CAN_H, PDM_5, PDM_2, PDM_VBAT, PDM_IGN, PDM_4, PDM_1,
+      PDM_VBAT, PDM_IGN, IGN, VBAT, VBAT, IGN, PDM_EXP_IGN, PDM_EXP_VBAT,
+      PDM_EXP_1, PDM_EXP_4, PDM_EXP_IGN, PDM_EXP_VBAT, PDM_EXP_2, PDM_EXP_5, PDM_CAN_H, PDM_EXP_6, PDM_EXP_3, PDM_EXP_7, PDM_CAN_L, GND,
+      VBAT, VBAT, VBAT, VBAT, PDM_PAD_VBAT, COOLSUIT_VBAT, NC, DRIV_AIR_VBAT,
+      PDM_EXP_2, COOLSUIT_VBAT, PDM_EXP_3, DRIV_AIR_VBAT, COOLSUIT_12V, UNLOAD, DRIV_AIR_12V, UNLOAD]
+    loops:
+      - [9, 13]
+      - [10, 14]
+      - [15, 18]
+      - [16, 17]
+      - [19, 23]
+      - [20, 24]
+      - [33, 34]
+      - [34, 35]
+      - [35, 36]
+      - [38, 42]
+      - [40, 44]
+      - [25, 41]
+      - [29, 43]
+      - [46, 48]
+
+  
+  Body_PDM_2:
+    <<: *gep_48
+    pinlabels: [PDM_6, WIPER_12V, PDM_7, BLOWER_12V, NC, NC, NC, NC, WIPER_VBAT, UNLOAD, BLOWER_VBAT, UNLOAD,
+      WIPER_VBAT, GND, BLOWER_VBAT, VBAT, VBAT, UNLOAD_GND, VBAT, ACC_LIGHT_VBAT,
+      START, UNLOAD_GND, PDM_EXP_4, ACC_LIGHT_VBAT, NC, NC, ACC_LIGHT_12V, UNLOAD, UNLOAD, GND, NC, NC,
+      VBAT, VBAT, VBAT, VBAT, RADIO_12V, FUEL_PUMP_VBAT, NC, DIFF_COOL_VBAT,
+      PDM_EXP_5, FUEL_PUMP_VBAT, PDM_ECP_6, DIFF_COOL_VBAT, FUEL_PUMP_12V, GND, DIFF_COOL_12V, UNLOAD]
+    loops:
+      - [9, 13]
+      - [10, 12]
+      - [10, 28]
+      - [11, 15]
+      - [16, 19]
+      - [17, 19]
+      - [18, 22]
+      - [20, 24]
+      - [28, 29]
+      - [29, 48]
+      - [33, 34]
+      - [34, 35]
+      - [35, 36]
+      - [38, 42]
+      - [40, 44]
+
+
+  Engine_PDM:
+    <<: *gep_72
+    pinlabels: [PDM_2, FOG_12V, PDM_5, HORN_12V, IGN_SW, COIL_12V,
+      FOG_VBAT, UNLOAD, HORN_VBAT, GND, COIL_VBAT, GND,
+      FOG_VBAT, VBAT, HORN_VBAT, VBAT, COIL_VBAT, VBAT,
+      VBAT, HEADLIGHT_VBAT, VBAT, BRAKE_VBAT, VBAT, TRANS_PUMP_VBAT,
+      PDM_1, HEADLIGHT_VBAT, BRAKE_SW, BRAKE_VBAT, PDM_3, TRANS_PUMP_VBAT,
+      NC, NC, BRAKE_12V, UNLOAD, TRANS_PUMP_12V, UNLOAD,
+      HEADLIGHT_12V, UNLOAD, IGN_SW, IGN, BRAKE_SW, GND,
+      UNLOAD, FAN_12V, IGN_VBAT, GND, ABS_BRAKE_SIG, GND,
+      NC, NC, IGN_VBAT, VBAT, ABS_5A_12V, VBAT,
+      FAN_VBAT, PDM_4, VBAT, MIKU_VBAT, VBAT, MAIN_VBAT,
+      FAN_VBAT, ABS_20A_12V, PDM_EXP_1, MIKU_VBAT, IGN_SW, MAIN_VBAT,
+      VBAT, VBAT, MIKU_SW, UNLOAD, MAIN_12V, GND]
+    loops:
+      - [7, 13]
+      - [9, 15]
+      - [11, 17]
+      - [14, 19]
+      - [14, 21]
+      - [16, 21]
+      - [16, 23]
+      - [18, 23]
+      - [20, 26]
+      - [22, 28]
+      - [24, 30]
+      - [34, 38]
+      - [34, 36]
+      - [38, 43]
+      - [45, 51]
+      - [52, 57]
+      - [52, 59]
+      - [54, 59]
+      - [55, 61]
+      - [58, 64]
+      - [60, 66]
+      - [67, 68]
+  
+
+  RCP_IO:
+    type: Race Capture I/O Array
+    #image: img/RaceCapturePro_MK3_Molex.png
+    pincount: 24
+    pinlabels: [12V, GPIO1, GPIO2, GPIO3, REF_5V, AN5, AN6, AN7, AN8, AUX_TX,
+      CAN1_H, CAN2_H, CAN2_L, CAN1_L, AUX_RX, AN4, AN3, AN2, AN1, FREQ4, FREQ3,
+      FREQ2, FREQ1, GND]
+  
+
+  RCP_RJ45:
+    type: Race Capture CAN Bus
+    #image: img/RaceCapturePro_MK3_RJ45.png
+    pincount: 8
+    pinlabels: [GND, CAN1_H, CAN1_L, CAN2_H, CAN2_L, N/C, N/C, 12V]
+
+
+  PDM_Keypad:
+    <<: *dt_m
+    pincount: 4
+    pinlabels: [CAN_L, CAN_H, GND, VBAT]
+  
+  X1:
+    <<: *dtp_f
+    notes: Wipers
+    pincount: 2
+    pinlabels: [12V, GND]
+  
+  X2:
+    <<: *dtp_f
+    notes: Blower
+    pincount: 2
+    pinlabels: [12V, GND]
+  
+  X3:
+    type: TBD
+    subtype: TBD
+    notes: Coolsuit
+    pincount: 2
+    pinlabels: [12V, GND]
+  
+  X4:
+    <<: *dt_f
+    notes: Driver Air
+    pincount: 2
+    pinlabels: [12V, GND]
+  
+  X5:
+    type: TBD
+    subtype: TBD
+    notes: Radio
+    pincount: 2
+    pinlabels: [12V, GND]
+  
+  X6:
+    <<: *dtm_f
+    notes: USB Hub
+    pincount: 2
+    pinlabels: [12V, GND]
+  
+  X7:
+    type: TBD
+    subtype: TBD
+    pincount: 2
+    notes: Accessory Lighting (?)
+  
+  X8:
+    <<: *dt_f
+    notes: Fuel Pump
+    pincount: 2
+    pinlabels: [12V, GND]
+  
+  X9:
+    <<: *dt_f
+    notes: Diff Cooler
+    pincount: 2
+    pinlabels: [12V, GND]
+  
+  X10:
+    <<: *dtm_f
+    notes: Dash / HUD / rPi
+    pincount: 2
+    pinlabels: [12V, GND]
+  
+  X11:
+    type: USB
+    subtype: Micro
+    pincount: 1
+    notes: Dash / HUD / rPi
+  
+  X12:
+    type: switch
+    subtype: 2-way
+    notes: Ignition Switch
+    pincount: 2
+  
+  X13a:
+    type: TBD
+    subtype: TBD
+    notes: Passenger Headlight
+    pincount: 2
+    pinlabels: [12V, GND]
+  
+  X13b:
+    type: TBD
+    subtype: TBD
+    notes: Driver Headlight
+    pincount: 2
+    pinlabels: [12V, GND]
+  
+  X14a:
+    type: TBD
+    subtype: TBD
+    notes: Passenger Fog Light
+    pincount: 2
+    pinlabels: [12V, GND]
+  
+  X14b:
+    type: TBD
+    subtype: TBD
+    notes: Driver Fog Light
+    pincount: 2
+    pinlabels: [12V, GND]
+  
+  X15:
+    <<: *dt_f
+    notes: Trans Oil Pump
+    pincount: 2
+    pinlabels: [12V, GND]
+  
+  X16:
+    <<: *dtp_f
+    notes: Engine Fan
+    pincount: 2
+    pinlabels: [12V, GND]
+  
+  X17a:
+    <<: *dt_f
+    notes: Passenger Horn
+    pincount: 2
+    pinlabels: [12V, GND]
+  
+  X17b:
+    <<: *dt_f
+    notes: Driver Horn
+    pincount: 2
+    pinlabels: [12V, GND]
+  
+  X18a:
+    type: TBD
+    subtype: TBD
+    notes: Passenger Brake Light
+    pincount: 2
+    pinlabels: [12V, GND]
+  
+  X18b:
+    type: TBD
+    subtype: TBD
+    notes: Driver Brake Light
+    pincount: 2
+    pinlabels: [12V, GND]
+  
+  X18c:
+    type: TBD
+    subtype: TBD
+    notes: Center Brake Light
+    pincount: 2
+    pinlabels: [12V, GND]
+  
+  _GND:
+    type: Terminal
+    subtype: Ring
+    pinlabels: [GND]
+    autogenerate: true
+  
+  _VBAT:
+    type: Terminal
+    subtype: Ring
+    pinlabels: [12V]
+    autogenerate: true
